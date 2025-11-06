@@ -61,7 +61,7 @@ media_player:
     id: echo_media_player
     announcement_pipeline:
       speaker: echo_speaker
-      format: WAV      
+      format: WAV
     codec_support_enabled: false
     buffer_size: 6000
     volume_min: 0.4
@@ -81,7 +81,6 @@ media_player:
           green: 0%
           brightness: 100%
           effect: none
-#      - speaker.mute_on
     on_idle:
       - script.execute: start_wake_word
       - script.execute: reset_led
@@ -97,7 +96,7 @@ voice_assistant:
   media_player: echo_media_player
   noise_suppression_level: 2
   auto_gain: 31dBFS
-  on_tts_end:    
+  on_tts_end:
     - homeassistant.action:
         action: media_player.play_media
         data:
